@@ -1,4 +1,4 @@
-import chalk from "chalk"
+// import chalk from "chalk"
 import { CreateTable } from "../domain/use-cases/createTable"
 import { SaveFile } from "../domain/use-cases/saveFile"
 
@@ -13,7 +13,7 @@ export interface RunOptions {
 export class ServerApp {
 
   static run({limit, base, showTable, fileDestination, fileName}: RunOptions) {
-    console.log(chalk.blue('Server running...!'))
+    console.log('Servidor Corriendo!')
 
     const table = new CreateTable()
       .execute({
@@ -28,9 +28,10 @@ export class ServerApp {
         fileName 
       })
 
-    if(saveTable) console.log(chalk.green('File Created!!'))
-    else console.error(chalk.red('File Not Created'))
+      if (showTable) console.log(table);
 
-    if(showTable) console.log(table)
+      (saveTable)
+        ? console.log('File created!')
+        : console.error('File not created!');
   }
 }

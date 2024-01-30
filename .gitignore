@@ -2,3 +2,6 @@ node_modules/
 salidas/
 dist/
 outputs/
+coverage/
+test-destination/
+customOutputs/

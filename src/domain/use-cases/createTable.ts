@@ -1,5 +1,4 @@
-import chalk from "chalk"
-
+// import chalk from "chalk"
 
 interface CreateTableOptions {
   base: number
@@ -23,7 +22,10 @@ export class CreateTable implements CreateTableUseCase {
     let impresion = ''
 
     for(let i = 1; i <= limit; i++) {
-      impresion += `${chalk.red.bold(base)} x ${chalk.red.bold(i)} = ${chalk.green(base * i)}\n`
+      // impresion += `${chalk.red.bold(base)} x ${chalk.red.bold(i)} = ${chalk.green(base * i)}`
+      impresion += `${base} x ${i} = ${base * i}`
+
+      if(i < limit) impresion += '\n'
     }
 
     return impresion
